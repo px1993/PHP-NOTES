@@ -128,3 +128,4 @@ namespace PHP;
 //}
 //
 //$a = new Index(); $a->testTrait();
+//var_dump(__NAMESPACE__); //返回当前文件的命名空间
