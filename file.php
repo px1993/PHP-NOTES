@@ -34,7 +34,7 @@
  *
  */
 
-$file = './test.txt';
+//$file = './test.txt';
 //var_dump(basename($file));  //basename()返回文件名
 //var_dump(copy($file,'./test1.txt'));  //copy() 拷贝文件，如果目标文件已经存在，则会进行覆盖 overwrite
 //var_dump(unlink('./test1.txt'));  //unlink() 删除文件，如果文件不存在，返回fasle，并且产生一个警告，所以在删除前需要先判断文件是否真的存在
@@ -58,7 +58,42 @@ $file = './test.txt';
 //unlink($file); //删除文件
 
 /**
- * 4.2 注意事项
+ * 4.2 对目录的操作
+ *
+ * 通过PHP函数的方式对目录进行遍历
+ * 涉及到的函数 opendir() mkdir() rmdir() readdir()只会删除空的文件夹
+ * 使用递归的方法
+ */
+//$dir = './test';
+
+//递归要使用函数
+//function loopDir($dir){
+//    //1.判断传递进去的是不是文件夹
+//    if (!is_dir($dir)){
+//        return false;
+//    }
+//    //2.打开文件夹
+//    $handle = opendir($dir);
+//    //3.循环读取文件夹中的每一个文件
+//    while(false !== ($file = readdir($handle))){
+//        //4.过滤当前目录和上级目录
+//        if ($file != '.' && $file != '..'){
+//            //5.判断当前文件是不是DIR类型
+//            if (filetype($dir . '/' .$file) == 'dir'){
+//                loopDir($dir . '/' . $file);
+//            }else{
+//                //6.打印
+//                echo $file . PHP_EOL;
+//            }
+//        }
+//    }
+//}
+//
+//loopDir($dir);
+
+
+/**
+ * 4.3 注意事项
  *
  */
 
